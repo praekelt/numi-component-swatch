@@ -1,0 +1,21 @@
+{
+  "name": "numi-swatch",
+  "version": "0.0.0",
+  "description": "An example component demonstrating leet front end techniques we'd like to use for Numi itself.",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/praekelt/numi-swatch.git"
+  },
+  "author": "Praekelt Foundation",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/praekelt/numi-swatch/issues"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13"
+  }
+}

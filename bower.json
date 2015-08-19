@@ -1,0 +1,19 @@
+{
+  "name": "numi-swatch",
+  "homepage": "https://github.com/praekelt/numi-swatch",
+  "authors": [
+    "Praekelt Foundation"
+  ],
+  "description": "An example component demonstrating leet front end techniques we'd like to use for Numi itself.",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
