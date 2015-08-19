@@ -3,13 +3,16 @@ module.exports = function(grunt) {
     paths: {
       js: ['gruntfile.js']
     },
+    scsslint: {
+      all: ['<%= paths.scss %>']
+    },
     jshint: {
       all: ['<%= paths.js %>']
     },
     jscs: {
       all: ['<%= paths.js %>']
     }
-  })
+  });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jscs');
