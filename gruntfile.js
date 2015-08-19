@@ -1,21 +1,22 @@
 module.exports = function(grunt) {
   grunt.initConfig({
+    paths: {
+      js: ['gruntfile.js']
+    },
+    jshint: {
+      all: ['<%= paths.js %>']
+    },
     jscs: {
-
-      // TODO js paths
-      all: [
-        'gruntfile.js'
-      ]
-
+      all: ['<%= paths.js %>']
     }
-  });
+  })
 
-
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jscs');
 
   grunt.registerTask('default', []);
   grunt.registerTask('build', []);
-  grunt.registerTask('lint', ['jscs']);
+  grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('test', []);
   grunt.registerTask('ci', ['lint']);
   grunt.registerTask('perf', []);
