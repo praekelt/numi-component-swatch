@@ -1,0 +1,14 @@
+{
+  "preset": "jquery",
+  "requireCurlyBraces": null,
+  "requireSpacesInsideParentheses": null,
+  "requireSpacesInsideObjectBrackets": null,
+  "requireSpacesInsideBrackets": null,
+  "disallowSpacesInConditionalExpression": null,
+  "requireOperatorBeforeLineBreak": null,
+  "disallowMultipleLineBreaks": null,
+  "validateQuoteMarks": {
+    "mark": "'",
+    "escape": true
+  }
+}
