@@ -7,12 +7,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/praekelt/numi-component-swatch.git"
+    "url": "https://github.com/praekelt/numi-swatch.git"
   },
   "author": "Praekelt Foundation",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/praekelt/numi-component-swatch/issues"
+    "url": "https://github.com/praekelt/numi-swatch/issues"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
