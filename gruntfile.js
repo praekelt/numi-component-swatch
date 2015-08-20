@@ -3,9 +3,6 @@ module.exports = function(grunt) {
     paths: {
       js: ['gruntfile.js']
     },
-    scsslint: {
-      all: ['<%= paths.scss %>']
-    },
     jshint: {
       all: ['<%= paths.js %>']
     },
