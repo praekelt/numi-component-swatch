@@ -10,5 +10,11 @@
   "maxparams": 3,
   "maxdepth": 2,
   "unused": "vars",
-  "laxbreak": true
+  "laxbreak": true,
+  "undef": true,
+  "browser": true,
+  "jquery": true,
+  "node": true,
+  "phantom": true,
+  "worker": true
 }
