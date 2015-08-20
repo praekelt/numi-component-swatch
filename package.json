@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "An example component demonstrating leet front end techniques we'd like to use for Numi itself.",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "ci": "grunt ci"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,8 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13"
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-jscs": "^2.1.0"
   }
 }
