@@ -3,18 +3,12 @@
   "unused": "vars",
   "bitwise": true,
   "eqeqeq": true,
-  "es3": true,
   "forin": true,
   "freeze": true,
   "noarg": true,
-  "undef": true,
   "unused": true,
   "maxparams": 3,
   "maxdepth": 2,
-  "maxstatements": 4,
-  "browser": true,
-  "jquery": true,
-  "node": true,
-  "phantom": true,
-  "worker": true
+  "unused": "vars",
+  "laxbreak": true
 }
