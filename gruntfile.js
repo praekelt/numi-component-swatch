@@ -4,7 +4,8 @@ module.exports = function(grunt) {
       js: ['gruntfile.js']
     },
     jshint: {
-      all: ['<%= paths.js %>']
+      all: ['<%= paths.js %>'],
+      options: {jshintrc: true}
     },
     jscs: {
       all: ['<%= paths.js %>']
