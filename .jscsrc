@@ -1,14 +1,5 @@
 {
-  "preset": "jquery",
-  "requireCurlyBraces": null,
-  "requireSpacesInsideParentheses": null,
-  "requireSpacesInsideObjectBrackets": null,
-  "requireSpacesInsideBrackets": null,
-  "disallowSpacesInConditionalExpression": null,
-  "requireOperatorBeforeLineBreak": null,
+  "preset": "airbnb",
   "disallowMultipleLineBreaks": null,
-  "validateQuoteMarks": {
-    "mark": "'",
-    "escape": true
-  }
+  "requireTrailingComma": null
 }
