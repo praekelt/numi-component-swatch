@@ -3,8 +3,8 @@ module.exports = function(grunt) {
     paths: {
       js: [
         'gruntfile.js',
-        'src/scripts/**/*.js',
-        'src/scripts/**/*.jsx'
+        'src/**/*.js',
+        'src/**/*.jsx'
       ]
     },
     jshint: {
