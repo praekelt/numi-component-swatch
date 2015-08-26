@@ -17,5 +17,7 @@ module.exports = {
       loader: 'babel'
     }]
   },
-  plugins: [new webpack.optimize.UglifyJsPlugin()]
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({output: {comments: false}})
+  ]
 };
