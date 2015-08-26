@@ -37,7 +37,9 @@ module.exports = function(grunt) {
   grunt.registerTask('build:scripts', ['webpack:all']);
   grunt.registerTask('build', ['build:scripts']);
 
-  grunt.registerTask('watch', ['webpack:watch']);
+  grunt.registerTask('watch:scripts', ['webpack:watch']);
+  grunt.registerTask('watch', ['watch:scripts']);
+
   grunt.registerTask('default', []);
   grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('test', []);
