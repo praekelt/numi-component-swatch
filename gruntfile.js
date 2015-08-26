@@ -1,11 +1,12 @@
-var webpack = require('webpack');
+var extend = require('extend');
+var webpack = require('./webpack.config');
 
 
 module.exports = function(grunt) {
   grunt.initConfig({
     paths: {
       js: [
-        'gruntfile.js',
+        '*.js',
         'src/**/*.js',
         'src/**/*.jsx'
       ]
@@ -21,24 +22,11 @@ module.exports = function(grunt) {
       all: ['<%= paths.js %>']
     },
     webpack: {
-      all: {
-        entry: {
-          collection: './src/client/views/collection/index.js'
-        },
-        devtool: '#sourcemap',
-        output: {
-          path: 'static/js/',
-          filename: '[name].min.js',
-          publicPath: '/static/js/'
-        },
-        module: {
-          loaders: [{
-            test: /\.jsx$/,
-            loader: 'babel'
-          }]
-        },
-        plugins: [new webpack.optimize.UglifyJsPlugin()]
-      }
+      all: webpack,
+      watch: extend({
+        watch: true,
+        keepalive: true
+      }, webpack)
     }
   });
 
@@ -46,9 +34,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-webpack');
 
-  grunt.registerTask('build:scripts', ['webpack']);
+  grunt.registerTask('build:scripts', ['webpack:all']);
   grunt.registerTask('build', ['build:scripts']);
 
+  grunt.registerTask('watch', ['webpack:watch']);
   grunt.registerTask('default', []);
   grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('test', []);
