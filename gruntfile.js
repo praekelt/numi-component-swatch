@@ -1,18 +1,25 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     paths: {
-      js: ['gruntfile.js']
+      js: [
+        'gruntfile.js',
+        'src/**/*.js',
+        'src/**/*.jsx'
+      ]
     },
     jshint: {
       all: ['<%= paths.js %>'],
-      options: {jshintrc: true}
+      options: {
+        jshintrc: true,
+        additionalSuffixes: ['.js']
+      }
     },
     jscs: {
       all: ['<%= paths.js %>']
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-jsxhint');
   grunt.loadNpmTasks('grunt-jscs');
 
   grunt.registerTask('default', []);
