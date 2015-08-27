@@ -50,12 +50,17 @@ module.exports = function(grunt) {
         options: {atBegin: true},
         files: ['src/styles/**/*.scss'],
         tasks: ['build:styles']
+      },
+      lint: {
+        options: {atBegin: true},
+        files: ['<!= paths.js %>'],
+        tasks: ['lint']
       }
     },
     concurrent: {
       watch: {
         options: {logConcurrentOutput: true},
-        tasks: ['watch:styles', 'watch:scripts']
+        tasks: ['watch:lint', 'watch:styles', 'watch:scripts']
       }
     },
     webpack: {
@@ -73,6 +78,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('watch:scripts', ['webpack:watch']);
   grunt.registerTask('watch:styles', ['watchFiles:styles']);
+  grunt.registerTask('watch:lint', ['watchFiles:lint']);
   grunt.registerTask('watch', ['concurrent:watch']);
 
   grunt.registerTask('lint', ['jshint', 'jscs']);
