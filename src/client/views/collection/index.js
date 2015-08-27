@@ -10,13 +10,14 @@ function run() {
   loadCSS('/static/css/collection-enhanced.min.css');
 
   var done = multicb({pluck: 1});
-  loadState(done());
   loadScript(done());
+  loadState(done());
 
   done(function(err, res) {
     if (err) return console.error(err);
-    var state = res[0];
-    require('./collection')(state);
+    var collection = res[0];
+    var state = res[1];
+    collection(state);
   });
 }
 
@@ -27,7 +28,7 @@ function loadState(done) {
 
 
 function loadScript(done) {
-  require.ensure(['./collection'], function() {
-    done(null);
+  require.ensure(['./collection'], function(require) {
+    done(null, require('./collection'));
   });
 }
