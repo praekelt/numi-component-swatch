@@ -3,6 +3,13 @@ var webpack = require('./webpack.config');
 
 
 module.exports = function(grunt) {
+  grunt.loadNpmTasks('grunt-jsxhint');
+  grunt.loadNpmTasks('grunt-jscs');
+  grunt.loadNpmTasks('grunt-webpack');
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.renameTask('watch', 'watchFiles');
+
   grunt.initConfig({
     paths: {
       js: [
@@ -21,8 +28,31 @@ module.exports = function(grunt) {
     jscs: {
       all: ['<%= paths.js %>']
     },
+    sass: {
+      all: {
+        options: {
+          outputStyle: 'compressed',
+          sourceMap: true
+        },
+        files: {
+          'static/css/collection-core.css': [
+            'src/styles/views/collection/core.scss'
+          ],
+          'static/css/collection-enhanced.css': [
+            'src/styles/views/collection/enhanced.scss'
+          ]
+        }
+      }
+    },
+    watchFiles: {
+      styles: {
+        options: {atBegin: true},
+        files: ['src/styles/**/*.scss'],
+        tasks: ['build:styles']
+      }
+    },
     webpack: {
-      all: webpack,
+      build: webpack,
       watch: extend({
         watch: true,
         keepalive: true
@@ -30,15 +60,13 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-jsxhint');
-  grunt.loadNpmTasks('grunt-jscs');
-  grunt.loadNpmTasks('grunt-webpack');
-
-  grunt.registerTask('build:scripts', ['webpack:all']);
-  grunt.registerTask('build', ['build:scripts']);
+  grunt.registerTask('build:scripts', ['webpack:build']);
+  grunt.registerTask('build:styles', ['sass:all']);
+  grunt.registerTask('build', ['build:styles', 'build:scripts']);
 
   grunt.registerTask('watch:scripts', ['webpack:watch']);
-  grunt.registerTask('watch', ['watch:scripts']);
+  grunt.registerTask('watch:styles', ['watchFiles:styles']);
+  grunt.registerTask('watch', ['watch:styles', 'watch:scripts']);
 
   grunt.registerTask('default', []);
   grunt.registerTask('lint', ['jshint', 'jscs']);
