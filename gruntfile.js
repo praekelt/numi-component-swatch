@@ -8,6 +8,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-webpack');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-concurrent');
   grunt.renameTask('watch', 'watchFiles');
 
   grunt.initConfig({
@@ -51,6 +52,12 @@ module.exports = function(grunt) {
         tasks: ['build:styles']
       }
     },
+    concurrent: {
+      watch: {
+        options: {logConcurrentOutput: true},
+        tasks: ['watch:styles', 'watch:scripts']
+      }
+    },
     webpack: {
       build: webpack,
       watch: extend({
@@ -66,7 +73,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('watch:scripts', ['webpack:watch']);
   grunt.registerTask('watch:styles', ['watchFiles:styles']);
-  grunt.registerTask('watch', ['watch:styles', 'watch:scripts']);
+  grunt.registerTask('watch', ['concurrent:watch']);
 
   grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('test', []);
