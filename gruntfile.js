@@ -68,9 +68,10 @@ module.exports = function(grunt) {
   grunt.registerTask('watch:styles', ['watchFiles:styles']);
   grunt.registerTask('watch', ['watch:styles', 'watch:scripts']);
 
-  grunt.registerTask('default', []);
   grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('test', []);
   grunt.registerTask('ci', ['lint']);
   grunt.registerTask('perf', []);
+
+  grunt.registerTask('default', ['lint', 'build']);
 };
