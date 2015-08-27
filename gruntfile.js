@@ -36,10 +36,10 @@ module.exports = function(grunt) {
           sourceMap: true
         },
         files: {
-          'static/css/collection-core.css': [
+          'static/css/collection-core.min.css': [
             'src/styles/views/collection/core.scss'
           ],
-          'static/css/collection-enhanced.css': [
+          'static/css/collection-enhanced.min.css': [
             'src/styles/views/collection/enhanced.scss'
           ]
         }

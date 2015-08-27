@@ -1,6 +1,6 @@
 {
 	"version": 3,
-	"file": "collection-enhanced.css",
+	"file": "collection-enhanced.min.css",
 	"sources": [
 		"../../src/styles/views/collection/enhanced.scss",
 		"../../src/styles/modules/collection/enhanced.scss",
