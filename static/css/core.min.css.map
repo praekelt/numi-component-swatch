@@ -1,8 +1,8 @@
 {
 	"version": 3,
-	"file": "collection-core.min.css",
+	"file": "core.min.css",
 	"sources": [
-		"../../src/styles/views/collection/core.scss",
+		"../../src/styles/bundles/core.scss",
 		"../../src/styles/base.scss",
 		"../../src/styles/modules/collection/core.scss",
 		"../../src/styles/theme/collection/core.scss"

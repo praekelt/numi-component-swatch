@@ -7,7 +7,7 @@ if (canUseReact()) run();
 
 
 function run() {
-  loadCSS('/static/css/collection-enhanced.min.css');
+  loadCSS('/static/css/enhanced.min.css');
 
   var done = multicb({pluck: 1});
   loadScript(done());
