@@ -53,7 +53,7 @@ module.exports = function(grunt) {
       },
       lint: {
         options: {atBegin: true},
-        files: ['<!= paths.js %>'],
+        files: ['<%= paths.js %>'],
         tasks: ['lint']
       }
     },
