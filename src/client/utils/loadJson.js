@@ -1,4 +1,4 @@
-function json(url, done) {
+function loadJson(url, done) {
   var xhr = new XMLHttpRequest();
 
   xhr.addEventListener('load', function() {
@@ -20,4 +20,4 @@ function json(url, done) {
 }
 
 
-module.exports = json;
+module.exports = loadJson;

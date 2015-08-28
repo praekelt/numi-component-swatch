@@ -1,6 +1,6 @@
 var loadCSS = require('exports?loadCSS!fg-loadcss');
 var multicb = require('multicb');
-var json = require('../../utils/json');
+var loadJson = require('../../utils/loadJson');
 var canUseReact = require('../../utils/can-use-react');
 
 if (canUseReact()) run();
@@ -23,7 +23,7 @@ function run() {
 
 
 function loadState(done) {
-  json(window._global.stateUrl, done);
+  loadJson(window._global.stateUrl, done);
 }
 
 
